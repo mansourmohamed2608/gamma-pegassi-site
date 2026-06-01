@@ -42,3 +42,13 @@ Thumbs.db
 # local reports or private files
 reports/
 tmp/
+
+# local AI / prompt files
+AGENTS.md
+CODEX_PATCH_START_MESSAGE.txt
+CODEX_START_MESSAGE.txt
+GAMMA_PEGASSI_CODEX_BRIEF.md
+GAMMA_PEGASSI_PATCH_BRIEF.md
+
+# root duplicate logo, real logo is inside public/brand/
+pegassi-mark.png
