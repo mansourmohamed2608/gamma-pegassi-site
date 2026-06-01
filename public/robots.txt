@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gammpegassi.com/sitemap.xml
+Sitemap: https://gammapegassi.com/sitemap.xml

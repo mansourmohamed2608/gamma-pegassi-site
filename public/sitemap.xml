@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gammpegassi.com/</loc>
+    <loc>https://gammapegassi.com/</loc>
   </url>
   <url>
-    <loc>https://gammpegassi.com/services</loc>
+    <loc>https://gammapegassi.com/services</loc>
   </url>
   <url>
-    <loc>https://gammpegassi.com/products</loc>
+    <loc>https://gammapegassi.com/products</loc>
   </url>
   <url>
-    <loc>https://gammpegassi.com/about</loc>
+    <loc>https://gammapegassi.com/about</loc>
   </url>
   <url>
-    <loc>https://gammpegassi.com/contact</loc>
+    <loc>https://gammapegassi.com/contact</loc>
+  </url>
+  <url>
+    <loc>https://gammapegassi.com/tash8eel</loc>
+  </url>
+  <url>
+    <loc>https://gammapegassi.com/tash8eel/privacy</loc>
+  </url>
+  <url>
+    <loc>https://gammapegassi.com/tash8eel/terms</loc>
+  </url>
+  <url>
+    <loc>https://gammapegassi.com/tash8eel/data-deletion</loc>
   </url>
 </urlset>

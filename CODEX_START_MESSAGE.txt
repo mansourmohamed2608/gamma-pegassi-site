@@ -1,0 +1,5 @@
+Read `GAMMA_PEGASSI_CODEX_BRIEF.md` in this folder and implement it fully.
+
+Create the complete project from scratch in the current folder. Use the provided `pegassi-mark.png` logo file. Do not create or redesign a logo. Keep the site static-export compatible. Run `npm run build`, fix errors, and summarize what you created.
+
+If you need persistent project rules, also create/update `AGENTS.md` from the brief.

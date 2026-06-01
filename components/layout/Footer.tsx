@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { site, tash8eelPublicLinks } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -24,7 +24,7 @@ export function Footer() {
           <p className="mt-5 max-w-xl text-sm leading-7 text-white/62">{site.description}</p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-3">
           <div>
             <h2 className="text-xs font-bold uppercase tracking-[0.24em] text-white/45">Contact</h2>
             <div className="mt-4 grid gap-3 text-sm text-white/68">
@@ -43,6 +43,18 @@ export function Footer() {
             <h2 className="text-xs font-bold uppercase tracking-[0.24em] text-white/45">Links</h2>
             <div className="mt-4 grid gap-3 text-sm text-white/68">
               {site.nav.map((item) => (
+                <Link key={item.href} href={item.href} className="transition hover:text-white">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.24em] text-white/45">
+              Products
+            </h2>
+            <div className="mt-4 grid gap-3 text-sm text-white/68">
+              {tash8eelPublicLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="transition hover:text-white">
                   {item.label}
                 </Link>

@@ -36,8 +36,8 @@ export const site = {
     "General Trading",
     "Computer programming, consultancy and related activities",
   ],
-  email: "hello@gammpegassi.com",
-  url: "https://gammpegassi.com",
+  email: "hello@gammapegassi.com",
+  url: "https://gammapegassi.com",
   calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL,
   whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL,
   heroVisualMode: "motion" as HeroVisualMode,
@@ -322,14 +322,17 @@ export const productLab = [
 ];
 
 export const tash8eelAi = {
-  label: "Product Lab / In development",
+  label: "MVP stage / pilot-ready",
   name: "Tash8eel AI",
   title: "Tash8eel AI - intelligent operations for stores and restaurants.",
   description:
-    "Tash8eel AI is an intelligent operations platform concept for shops, restaurants, and small businesses. It connects customer communication, orders, POS, inventory, calls, reports, and automation into one operating system.",
+    "Tash8eel AI is an AI-driven merchant operating system for restaurants, cafes, retail shops, and multi-branch businesses. It connects customer communication, orders, POS and cashier workflows, inventory visibility, finance, reports, calls, and automations into one platform.",
   detail:
     "Tash8eel AI is being shaped as a connected operating platform for merchants who deal with scattered messages, manual orders, cashier workflows, stock updates, and reporting gaps. The goal is to bring daily operations into one practical system instead of disconnected tools.",
   note: "Public launch details will be announced when the product is ready.",
+  appUrl: "https://app.gammapegassi.com",
+  operator: "Gamma Pegassi TB L.L.C-FZ",
+  ownerLocation: "Dubai, United Arab Emirates",
   capabilities: [
     "WhatsApp, Messenger, and Instagram customer communication",
     "AI replies and order capture",
@@ -343,6 +346,46 @@ export const tash8eelAi = {
     "Business visibility across sales, inventory, and workflows",
   ],
 };
+
+export const tash8eelPublicLinks = [
+  { label: "Tash8eel AI", href: "/tash8eel" },
+  { label: "Privacy Policy", href: "/tash8eel/privacy" },
+  { label: "Terms of Service", href: "/tash8eel/terms" },
+  { label: "Data Deletion", href: "/tash8eel/data-deletion" },
+];
+
+export const tash8eelLandingSections = [
+  {
+    title: "What Tash8eel AI does",
+    description:
+      "Tash8eel AI connects customer communication, orders, POS and cashier workflows, inventory visibility, finance, reports, calls, and automations into one merchant operating layer.",
+  },
+  {
+    title: "Channels and integrations",
+    description:
+      "The platform is designed to support merchant communication across WhatsApp, Messenger, Instagram, and related business integrations where approved and configured.",
+  },
+  {
+    title: "AI operations layer",
+    description:
+      "AI-assisted workflows help capture orders, classify requests, support replies, summarize activity, and surface operational context for merchant teams.",
+  },
+  {
+    title: "Merchant control and human escalation",
+    description:
+      "Merchants stay in control of customer communication, templates, business settings, staff workflows, and when conversations should move to a human operator.",
+  },
+  {
+    title: "Security and data handling",
+    description:
+      "Tash8eel AI is designed around practical access control, service-provider integrations, operational logs, and data handling practices suitable for merchant workflows.",
+  },
+  {
+    title: "Public review links",
+    description:
+      "Privacy Policy, Terms of Service, and Data Deletion Instructions are publicly available for platform review, merchants, users, and authorized requesters.",
+  },
+];
 
 export const principles = [
   "Build useful software",

@@ -1,0 +1,3 @@
+Read `GAMMA_PEGASSI_PATCH_BRIEF.md` and implement it fully.
+
+This is a patch prompt, not a rebuild. Do not recreate the project from scratch. Use the content in the brief directly because you do not have access to the PDFs. Keep the current premium dark design, keep the logo, add the company-specific sections/content, fix favicon 404, keep static export working, run `npm run build`, and summarize the changed files and build result.
