@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-[#030404]">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
           <Link href="/" className="inline-flex items-center gap-3" aria-label="Gamma Pegassi home">
             <Image
@@ -21,7 +21,7 @@ export function Footer() {
               GAMMA PEGASSI
             </span>
           </Link>
-          <p className="mt-5 max-w-xl text-sm leading-7 text-white/62">{site.description}</p>
+          <p className="mt-5 max-w-lg text-sm leading-7 text-white/58">{site.shortPositioning}</p>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-3">
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-5 text-center text-xs text-white/42">
-        © {year} {site.companyName}. All rights reserved.
+        © {year} {site.companyName}. Built in Dubai. All rights reserved.
       </div>
     </footer>
   );

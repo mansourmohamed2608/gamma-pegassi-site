@@ -16,7 +16,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.companyName} | Dubai Software Studio`,
+    default: `${site.companyName} | Dubai Software, AI & Game Studio`,
     template: `%s | ${site.companyName}`,
   },
   description: site.description,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     apple: [{ url: site.logo.mark, type: "image/png", sizes: "1024x1024" }],
   },
   openGraph: {
-    title: `${site.companyName} | Dubai Software Studio`,
+    title: `${site.companyName} | Dubai Software, AI & Game Studio`,
     description: site.description,
     url: site.url,
     siteName: site.companyName,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: `${site.companyName} | Dubai Software Studio`,
+    title: `${site.companyName} | Dubai Software, AI & Game Studio`,
     description: site.description,
     images: [site.logo.mark],
   },

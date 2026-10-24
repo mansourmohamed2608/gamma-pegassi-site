@@ -1,58 +1,101 @@
 import type { Metadata } from "next";
-import { Card } from "@/components/ui/Card";
+import { BookingCTA } from "@/components/sections/BookingCTA";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { ChromeAccent } from "@/components/visuals/ChromeAccent";
 import { companyCredentials, principles, site } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "About Gamma Pegassi, a Dubai-based technology startup founded in February 2025 and focused on software services and SaaS products.",
+    "Meet Gamma Pegassi, a Dubai-based technology studio building software, AI-assisted business systems, SaaS products, and interactive experiences.",
   path: "/about",
 });
 
 export default function AboutPage() {
   return (
     <>
-      <section className="px-4 pb-16 pt-32 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden border-b border-white/10 px-4 pb-20 pt-36 sm:px-6 sm:pb-28 lg:px-8">
+        <div className="hairline-grid absolute inset-y-0 right-0 w-1/2 opacity-20 [mask-image:linear-gradient(to_right,transparent,black)]" />
+        <div className="relative mx-auto max-w-7xl">
           <Reveal>
-            <SectionLabel>About</SectionLabel>
-            <h1 className="max-w-5xl text-5xl font-extrabold leading-[1] tracking-[-0.02em] text-white sm:text-6xl">
-              A Dubai-based software studio building practical systems for modern teams.
+            <SectionLabel>About Gamma Pegassi</SectionLabel>
+            <h1 className="metal-text max-w-5xl text-balance text-5xl font-extrabold leading-[0.95] tracking-[-0.05em] sm:text-7xl lg:text-8xl">
+              Engineering discipline. Creative range. Clear collaboration.
             </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/64">
-              Gamma Pegassi is based in {site.location}. Founded in {site.founded}, it is a
-              technology startup and software studio focused on practical software systems,
-              AI-assisted workflows, and SaaS products.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/64">
+              Gamma Pegassi is a {site.location}-based technology studio building custom software,
+              intelligent business systems, SaaS products, and interactive game experiences.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
-        <ChromeAccent className="-left-24 top-10 hidden lg:block" variant="arc" />
-        <div className="relative mx-auto max-w-7xl">
+      <section className="px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
-            <SectionLabel>Company Credentials</SectionLabel>
-            <h2 className="max-w-4xl text-4xl font-extrabold tracking-[-0.02em] text-white sm:text-5xl">
-              Dubai-based, legally established, and built for long-term work.
+            <SectionLabel>Who we are</SectionLabel>
+            <h2 className="text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl">
+              A young studio built for considered, long-term work.
             </h2>
           </Reveal>
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <Reveal delay={0.08}>
+            <div className="border-l border-white/15 pl-6 sm:pl-10">
+              <p className="text-xl leading-9 text-white/70">
+                Founded in {site.founded}, Gamma Pegassi connects product thinking, interface
+                design, engineering, automation, and technical quality in one working process.
+              </p>
+              <p className="mt-7 text-base leading-8 text-white/54">
+                The aim is straightforward: understand the real need, define a useful scope,
+                build it carefully, and leave clients with software that can be understood,
+                operated, and improved.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-white/[0.018] px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Reveal>
+            <SectionLabel>How we work</SectionLabel>
+            <h2 className="max-w-3xl text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-6xl">
+              Principles that show up in the work.
+            </h2>
+          </Reveal>
+          <div className="mt-14 grid border-l border-t border-white/12 sm:grid-cols-2 lg:grid-cols-3">
+            {principles.map((principle, index) => (
+              <Reveal key={principle} delay={index * 0.035}>
+                <div className="flex min-h-40 flex-col justify-between border-b border-r border-white/12 p-6 sm:p-8">
+                  <span className="text-xs font-bold tracking-[0.22em] text-white/30">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-10 text-xl font-bold text-white">{principle}</h3>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Reveal>
+            <SectionLabel>Company credentials</SectionLabel>
+            <h2 className="max-w-3xl text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl">
+              Established in Dubai, positioned for technical work.
+            </h2>
+          </Reveal>
+          <div className="mt-14 border-t border-white/12">
             {companyCredentials.map((credential, index) => {
               const Icon = credential.icon;
               return (
                 <Reveal key={credential.title} delay={index * 0.04}>
-                  <Card className="h-full">
-                    <Icon className="h-5 w-5 text-accent" aria-hidden="true" />
-                    <h3 className="mt-5 text-xl font-bold text-white">{credential.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/62">
-                      {credential.description}
-                    </p>
-                  </Card>
+                  <div className="grid gap-4 border-b border-white/12 py-7 sm:grid-cols-[3rem_0.75fr_1.25fr] sm:items-start sm:py-9">
+                    <Icon className="h-5 w-5 text-accent/75" aria-hidden="true" />
+                    <h3 className="text-xl font-bold text-white">{credential.title}</h3>
+                    <p className="text-sm leading-7 text-white/58">{credential.description}</p>
+                  </div>
                 </Reveal>
               );
             })}
@@ -60,47 +103,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal>
-            <Card className="h-full">
-              <SectionLabel>Mission</SectionLabel>
-              <h2 className="text-4xl font-extrabold tracking-[-0.02em] text-white">
-                To build practical software systems that help teams move faster, operate clearer,
-                and scale with less chaos.
-              </h2>
-            </Card>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <Card className="h-full">
-              <SectionLabel>Principles</SectionLabel>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {principles.map((principle) => (
-                  <div
-                    key={principle}
-                    className="rounded-md border border-white/10 bg-black/18 p-4 text-sm font-semibold text-white/75"
-                  >
-                    {principle}
-                  </div>
-                ))}
-              </div>
-            </Card>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.018] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <Reveal>
-            <SectionLabel>Company Shape</SectionLabel>
-            <p className="text-2xl leading-10 text-white/72">
-              Gamma Pegassi is new by design and honest about it. The site does not claim fake
-              clients, fake metrics, fake awards, or a long history. The focus is on the work:
-              building useful, maintainable software systems with clear communication.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <BookingCTA />
     </>
   );
 }

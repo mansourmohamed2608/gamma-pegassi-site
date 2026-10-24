@@ -12,7 +12,7 @@ export function pageMetadata({ title, description, path = "/" }: SeoInput): Meta
   const fullTitle = `${title} | ${site.companyName}`;
 
   return {
-    title: fullTitle,
+    title,
     description,
     alternates: {
       canonical: url,
@@ -57,5 +57,35 @@ export function organizationJsonLd() {
       addressCountry: "AE",
     },
     sameAs: site.socialLinks.map((link) => link.href),
+  };
+}
+
+export function serviceJsonLd({
+  name,
+  description,
+  path,
+  serviceTypes,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  serviceTypes: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: new URL(path, site.url).toString(),
+    serviceType: serviceTypes,
+    areaServed: {
+      "@type": "Place",
+      name: "Dubai, United Arab Emirates",
+    },
+    provider: {
+      "@type": "Organization",
+      name: site.companyName,
+      url: site.url,
+    },
   };
 }

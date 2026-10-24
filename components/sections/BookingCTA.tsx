@@ -4,25 +4,26 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function BookingCTA() {
   return (
-    <section className="px-4 py-24 sm:px-6 lg:px-8">
+    <section className="px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
       <Reveal>
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(135deg,rgba(120,223,255,0.10),rgba(255,255,255,0.035)_42%,rgba(255,255,255,0.02))] p-8 sm:p-12">
+        <div className="relative mx-auto max-w-6xl overflow-hidden border-y border-white/15 py-12 sm:py-16">
+          <div className="pointer-events-none absolute right-0 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-white/[0.06] blur-3xl" />
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-accent/80">
                 Next Step
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.02em] text-white sm:text-4xl">
-                Have a product, platform, or workflow you want to build?
+              <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-[-0.035em] text-white sm:text-5xl">
+                Bring us the problem. We’ll shape the clearest next step.
               </h2>
               <p className="mt-4 text-lg leading-8 text-white/66">
-                Book a short call and we’ll map the clearest next step.
+                Tell us what you are building, improving, or exploring.
               </p>
             </div>
             {site.calendlyUrl ? (
-              <Button href="/contact">Open Booking Page</Button>
+              <Button href="/contact">View Booking Options</Button>
             ) : (
-              <Button href="/contact">Book a Call</Button>
+              <Button href="/contact">Discuss Your Project</Button>
             )}
           </div>
         </div>

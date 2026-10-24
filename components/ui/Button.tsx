@@ -14,11 +14,11 @@ export function Button({ href, children, variant = "primary", className }: Butto
     <Link
       href={href}
       className={cn(
-        "group inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
+        "group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
         variant === "primary" &&
-          "border border-accent/50 bg-accent text-ink shadow-glow hover:bg-ice",
+          "border border-white/75 bg-ice text-ink shadow-glow hover:-translate-y-0.5 hover:bg-white",
         variant === "secondary" &&
-          "border border-white/15 bg-white/[0.04] text-white hover:border-accent/50 hover:bg-white/[0.08]",
+          "border border-white/18 bg-white/[0.035] text-white hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/[0.075]",
         variant === "ghost" && "text-muted hover:text-white",
         className,
       )}

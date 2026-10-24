@@ -4,11 +4,11 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { site } from "@/lib/site";
 
-const particles = Array.from({ length: 18 }, (_, index) => ({
+const signals = Array.from({ length: 9 }, (_, index) => ({
   id: index,
-  top: 18 + ((index * 13) % 62),
-  left: 10 + ((index * 19) % 78),
-  delay: index * 0.12,
+  top: 12 + ((index * 17) % 72),
+  left: 10 + ((index * 23) % 78),
+  delay: index * 0.18,
 }));
 
 export function HeroMotionExperiment() {
@@ -19,69 +19,64 @@ export function HeroMotionExperiment() {
   }
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[540px] overflow-hidden rounded-lg border border-white/10 bg-elevated/35 p-7 shadow-2xl shadow-black/40">
+    <div className="relative min-h-[22rem] w-full overflow-hidden sm:min-h-[30rem] lg:min-h-[calc(100svh-5rem)]">
+      <div className="hairline-grid absolute inset-0 opacity-35 [mask-image:radial-gradient(circle_at_center,black,transparent_72%)]" />
       <motion.div
         aria-hidden="true"
-        className="absolute inset-0 bg-engine-grid bg-[length:44px_44px] opacity-[0.13]"
-        animate={{ backgroundPosition: ["0px 0px", "44px 22px"] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+        className="absolute left-[12%] top-1/2 h-[74%] w-[74%] -translate-y-1/2 rounded-full border border-white/10"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 42, repeat: Infinity, ease: "linear" }}
       />
       <motion.div
         aria-hidden="true"
-        className="absolute left-[-20%] top-1/4 h-px w-[140%] bg-gradient-to-r from-transparent via-accent/55 to-transparent"
-        animate={{ x: ["-25%", "25%"], opacity: [0.12, 0.55, 0.12] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[25%] top-1/2 h-[48%] w-[48%] -translate-y-1/2 rounded-full border border-white/15"
+        animate={{ rotate: -360, scale: [0.98, 1.03, 0.98] }}
+        transition={{ rotate: { duration: 30, repeat: Infinity, ease: "linear" }, scale: { duration: 7, repeat: Infinity } }}
       />
       <motion.div
         aria-hidden="true"
-        className="absolute inset-12 rounded-full border border-accent/15"
-        animate={{ scale: [0.96, 1.03, 0.96], opacity: [0.35, 0.7, 0.35] }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-0 top-1/2 h-px w-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
+        animate={{ y: [-110, 140, -110], opacity: [0.12, 0.5, 0.12] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-      {particles.map((particle) => (
+
+      {signals.map((signal) => (
         <motion.span
-          key={particle.id}
+          key={signal.id}
           aria-hidden="true"
-          className="absolute h-1 w-1 rounded-full bg-accent/70"
-          style={{ top: `${particle.top}%`, left: `${particle.left}%` }}
-          animate={{ x: [0, 34, 0], opacity: [0, 0.65, 0] }}
-          transition={{
-            duration: 4.8,
-            delay: particle.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          className="absolute h-1 w-1 rounded-full bg-white"
+          style={{ top: `${signal.top}%`, left: `${signal.left}%` }}
+          animate={{ opacity: [0.08, 0.8, 0.08], scale: [1, 2.2, 1] }}
+          transition={{ duration: 3.6, delay: signal.delay, repeat: Infinity, ease: "easeInOut" }}
         />
       ))}
-      <div className="relative flex h-full items-center justify-center">
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_54%_50%,rgba(213,224,229,0.14),transparent_24%)]" />
+      <div className="relative flex h-full min-h-[22rem] items-center justify-center sm:min-h-[30rem] lg:min-h-[calc(100svh-5rem)]">
         <motion.div
-          aria-hidden="true"
-          className="absolute h-[62%] w-[62%] rounded-full bg-accent/10 blur-3xl"
-          animate={{ opacity: [0.38, 0.68, 0.38], scale: [0.96, 1.04, 0.96] }}
-          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: [1, 1.018, 1] }}
+          initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+          animate={{ opacity: 1, scale: [1, 1.018, 1], rotate: 0 }}
           transition={{
-            opacity: { duration: 0.8, delay: 0.35 },
-            scale: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+            opacity: { duration: 0.9, delay: 0.25 },
+            scale: { duration: 7, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: 1.1 },
           }}
-          className="relative z-10 flex h-[58%] w-[58%] items-center justify-center"
+          className="relative aspect-square w-[58%] max-w-[32rem]"
         >
           <Image
             src={site.logo.mark}
             alt="Gamma Pegassi Pegasus wing mark"
-            width={340}
-            height={340}
+            fill
             priority
-            className="h-full w-full object-contain drop-shadow-[0_0_34px_rgba(189,238,255,0.24)]"
+            sizes="(max-width: 1024px) 70vw, 42vw"
+            className="object-contain drop-shadow-[0_0_54px_rgba(213,224,229,0.18)]"
           />
         </motion.div>
       </div>
-      <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-[0.26em] text-white/50">
-        <span>Dubai</span>
-        <span>Software Systems</span>
+
+      <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between border-t border-white/10 pt-4 text-[10px] font-bold uppercase tracking-[0.28em] text-white/45">
+        <span>Dubai / UAE</span>
+        <span className="hidden sm:inline">Software · AI · Games</span>
       </div>
     </div>
   );
@@ -89,16 +84,17 @@ export function HeroMotionExperiment() {
 
 function StaticFallback() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[540px] overflow-hidden rounded-lg border border-white/10 bg-elevated/35 p-7">
-      <div className="absolute inset-0 bg-engine-grid bg-[length:44px_44px] opacity-[0.13]" />
-      <div className="relative flex h-full items-center justify-center">
+    <div className="relative flex min-h-[22rem] w-full items-center justify-center overflow-hidden sm:min-h-[30rem] lg:min-h-[calc(100svh-5rem)]">
+      <div className="hairline-grid absolute inset-0 opacity-25 [mask-image:radial-gradient(circle_at_center,black,transparent_72%)]" />
+      <div className="absolute h-[64%] w-[64%] rounded-full border border-white/10" />
+      <div className="relative aspect-square w-[58%] max-w-[32rem]">
         <Image
           src={site.logo.mark}
           alt="Gamma Pegassi Pegasus wing mark"
-          width={340}
-          height={340}
+          fill
           priority
-          className="h-[58%] w-[58%] object-contain"
+          sizes="(max-width: 1024px) 70vw, 42vw"
+          className="object-contain"
         />
       </div>
     </div>

@@ -10,18 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#050607",
-        surface: "#0B0F12",
-        elevated: "#101820",
+        surface: "#0A0C0E",
+        elevated: "#111519",
         line: "rgba(255,255,255,0.10)",
-        ice: "#BDEEFF",
-        accent: "#78DFFF",
-        metal: "#6F777C",
+        ice: "#F4F8FA",
+        accent: "#D5E0E5",
+        metal: "#7B858B",
       },
       fontFamily: {
         sans: ["var(--font-manrope)", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 44px rgba(120, 223, 255, 0.18)",
+        glow: "0 0 48px rgba(213, 224, 229, 0.16)",
       },
       backgroundImage: {
         "engine-grid":

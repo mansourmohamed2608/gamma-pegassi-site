@@ -6,61 +6,58 @@ import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { HeroMotionExperiment } from "@/components/visuals/HeroMotionExperiment";
 import { HeroStaticVisual } from "@/components/visuals/HeroStaticVisual";
-import { ChromeAccent } from "@/components/visuals/ChromeAccent";
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
   const initial = reduceMotion ? false : { opacity: 0, y: 22 };
-  const animate = reduceMotion ? undefined : { opacity: 1, y: 0 };
+  const animate = { opacity: 1, y: 0 };
 
   return (
-    <section className="relative min-h-[calc(100vh-2rem)] overflow-hidden px-4 pt-32 sm:px-6 lg:px-8">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(120,223,255,0.10),transparent_30%),radial-gradient(circle_at_84%_18%,rgba(255,255,255,0.05),transparent_26%)]" />
-      <div className="absolute inset-x-0 top-20 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
-      <ChromeAccent className="-right-24 top-28 hidden lg:block" variant="sheet" />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
-        <div>
-          <motion.div initial={initial} animate={animate} transition={{ duration: 0.6 }}>
-            <SectionLabel>Dubai software studio</SectionLabel>
+    <section className="relative min-h-[100svh] overflow-hidden border-b border-white/10 pt-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_44%,rgba(213,224,229,0.08),transparent_30%),linear-gradient(90deg,#050607_0%,rgba(5,6,7,0.96)_42%,rgba(5,6,7,0.18)_100%)]" />
+      <div className="absolute inset-y-20 right-0 w-full opacity-40 [mask-image:linear-gradient(to_bottom,transparent_0%,black_18%,black_82%,transparent_100%)] sm:opacity-55 lg:w-[58%] lg:opacity-100 lg:[mask-image:linear-gradient(to_right,transparent_0%,black_18%)]">
+        {site.heroVisualMode === "motion" ? <HeroMotionExperiment /> : <HeroStaticVisual />}
+      </div>
+
+      <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-7xl items-center px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <motion.div initial={initial} animate={animate} transition={{ duration: 0.55 }}>
+            <SectionLabel>Gamma Pegassi / Dubai</SectionLabel>
           </motion.div>
           <motion.h1
             initial={initial}
             animate={animate}
-            transition={{ duration: 0.68, delay: 0.08 }}
-            className="max-w-4xl text-balance text-5xl font-extrabold leading-[0.96] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl"
+            transition={{ duration: 0.68, delay: 0.07 }}
+            className="metal-text max-w-3xl text-balance text-[clamp(2.75rem,7vw,6.5rem)] font-extrabold leading-[0.92] tracking-[-0.055em]"
           >
-            Software, AI, and business systems built with clarity.
+            Software, AI & Game Development.
           </motion.h1>
           <motion.p
             initial={initial}
             animate={animate}
-            transition={{ duration: 0.68, delay: 0.16 }}
-            className="mt-7 max-w-2xl text-lg leading-8 text-white/68"
+            transition={{ duration: 0.68, delay: 0.14 }}
+            className="mt-6 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8"
           >
-            Gamma Pegassi is a Dubai-based technology startup and software studio building
-            practical software systems, AI-assisted workflows, and SaaS products for teams that
-            need reliable digital operations.
+            A Dubai-based technology studio turning business and creative ideas into practical,
+            maintainable digital products.
           </motion.p>
           <motion.div
             initial={initial}
             animate={animate}
-            transition={{ duration: 0.68, delay: 0.24 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
+            transition={{ duration: 0.68, delay: 0.21 }}
+            className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
-            <Button href="/contact">Book a Call</Button>
-            <Button href="/services" variant="secondary">
-              Explore Services
+            <Button href="/services">Explore Our Services</Button>
+            <Button href="/contact" variant="secondary">
+              Discuss Your Project
             </Button>
           </motion.div>
         </div>
+      </div>
 
-        <motion.div
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.98 }}
-          animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {site.heroVisualMode === "motion" ? <HeroMotionExperiment /> : <HeroStaticVisual />}
-        </motion.div>
+      <div className="absolute bottom-5 left-4 hidden items-center gap-3 text-[10px] font-bold uppercase tracking-[0.28em] text-white/38 sm:left-6 sm:flex lg:left-8">
+        <span className="h-px w-10 bg-white/25" />
+        Scroll to explore
       </div>
     </section>
   );

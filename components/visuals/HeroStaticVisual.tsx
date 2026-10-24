@@ -3,29 +3,19 @@ import { site } from "@/lib/site";
 
 export function HeroStaticVisual() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-lg border border-white/10 bg-elevated/40 p-8 shadow-2xl shadow-black/40">
-      <div className="absolute inset-0 bg-engine-grid bg-[length:42px_42px] opacity-[0.14]" />
-      <div className="absolute -left-20 top-14 h-52 w-52 rounded-full bg-accent/12 blur-3xl" />
-      <div className="absolute bottom-8 right-8 h-px w-2/3 bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
-      <div className="absolute left-8 top-8 h-px w-1/2 bg-gradient-to-r from-accent/40 to-transparent" />
-      <div className="relative flex h-full items-center justify-center">
-        <div className="absolute h-[72%] w-[72%] rounded-full border border-white/10" />
-        <div className="absolute h-[52%] w-[52%] rounded-full border border-accent/20 shadow-glow" />
+    <div className="relative flex min-h-[22rem] w-full items-center justify-center overflow-hidden sm:min-h-[30rem] lg:min-h-[calc(100svh-5rem)]">
+      <div className="hairline-grid absolute inset-0 opacity-25 [mask-image:radial-gradient(circle_at_center,black,transparent_72%)]" />
+      <div className="absolute h-[68%] w-[68%] rounded-full border border-white/10" />
+      <div className="absolute h-[48%] w-[48%] rounded-full border border-white/15 shadow-glow" />
+      <div className="relative aspect-square w-[58%] max-w-[32rem]">
         <Image
           src={site.logo.mark}
           alt="Gamma Pegassi Pegasus wing mark"
-          width={320}
-          height={320}
+          fill
           priority
-          className="relative z-10 h-[56%] w-[56%] object-contain drop-shadow-[0_0_30px_rgba(189,238,255,0.20)]"
+          sizes="(max-width: 1024px) 70vw, 42vw"
+          className="object-contain drop-shadow-[0_0_54px_rgba(213,224,229,0.18)]"
         />
-      </div>
-      <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-2">
-        {["Speed", "Clarity", "Systems"].map((item) => (
-          <div key={item} className="border border-white/10 bg-black/20 px-3 py-2 text-center text-[10px] font-bold uppercase tracking-[0.24em] text-white/56">
-            {item}
-          </div>
-        ))}
       </div>
     </div>
   );

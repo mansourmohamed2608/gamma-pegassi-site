@@ -46,6 +46,17 @@ NEXT_PUBLIC_CALENDLY_URL="https://calendly.com/your-link" npm run build
 
 If no URL is provided, the contact page shows a static inquiry form and direct email path.
 
+## Configure The Tash8eel Application Link
+
+Set the public URL only when the product application is reachable:
+
+```bash
+NEXT_PUBLIC_TASH8EEL_APP_URL="https://your-approved-product-url" npm run build
+```
+
+Without this value, the Tash8eel page directs visitors to the project inquiry page instead of
+showing an unavailable application link.
+
 ## Switch Hero Visual Mode
 
 Edit `lib/site.ts`:

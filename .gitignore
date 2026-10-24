@@ -38,10 +38,12 @@ Thumbs.db
 # temporary files
 *.tmp
 *.temp
+*.tsbuildinfo
 
 # local reports or private files
 reports/
 tmp/
+artifacts/qa/
 
 # local AI / prompt files
 AGENTS.md

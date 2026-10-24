@@ -6,14 +6,19 @@ import {
   Building2,
   CloudCog,
   Code2,
+  Gamepad2,
   Gauge,
   Headphones,
+  Layers3,
   LayoutDashboard,
   LineChart,
   Network,
   Rocket,
   ShieldCheck,
+  SlidersHorizontal,
+  Sparkles,
   Store,
+  TestTube2,
   UsersRound,
   Workflow,
 } from "lucide-react";
@@ -24,9 +29,9 @@ export const site = {
   companyName: "Gamma Pegassi",
   legalName: "Gamma Pegassi TB L.L.C-FZ",
   description:
-    "Gamma Pegassi is a Dubai-based technology startup and software studio building practical software systems, AI-assisted workflows, and SaaS products for teams that need reliable digital operations.",
+    "Gamma Pegassi is a Dubai-based technology studio building custom software, AI-assisted business systems, SaaS products, and interactive game experiences.",
   shortPositioning:
-    "Software, AI, and business systems built with precision, simplicity, and long-term intent.",
+    "Software, AI, and game development shaped with clarity, technical care, and long-term intent.",
   location: "Dubai, United Arab Emirates",
   publicAddress: "Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, UAE",
   freeZone: "Meydan Free Zone",
@@ -41,11 +46,10 @@ export const site = {
   calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL,
   whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL,
   heroVisualMode: "motion" as HeroVisualMode,
-  logo: {
-    mark: "/brand/pegassi-mark.png",
-  },
+  logo: { mark: "/brand/pegassi-mark.png" },
   nav: [
     { label: "Services", href: "/services" },
+    { label: "Game Studio", href: "/game-development" },
     { label: "Products", href: "/products" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
@@ -55,11 +59,10 @@ export const site = {
 
 export const positioningStrip = [
   "Dubai, UAE",
-  "Meydan Free Zone",
-  "Founded in 2025",
-  "Software Services",
-  "SaaS Products",
+  "Custom Software",
   "AI & Automation",
+  "Business Systems",
+  "Game Development",
 ];
 
 export const companyCredentials = [
@@ -83,63 +86,156 @@ export const companyCredentials = [
   {
     title: "Founded in 2025",
     description:
-      "A new company by design, focused on useful systems, honest delivery, and long-term quality.",
+      "A young studio focused on useful systems, transparent delivery, and work designed to last.",
     icon: Rocket,
   },
 ];
 
-export const services = [
+export const homeServices = [
   {
-    title: "SaaS MVP Development",
+    number: "01",
+    title: "Software Development",
     description:
-      "Focused first versions for founders who need to validate a product with clean architecture and room to grow.",
-    icon: Rocket,
+      "Custom web platforms, mobile applications, SaaS products, internal systems, and integrations built around real workflows.",
+    href: "/services#software-development",
+    icon: Code2,
   },
   {
-    title: "Custom Web Platforms",
+    number: "02",
+    title: "AI & Automation",
     description:
-      "Secure portals, operational platforms, and business-critical web systems shaped around real workflows.",
-    icon: Blocks,
+      "AI-assisted systems, analytics, and automations that reduce repetitive work and make operational information more useful.",
+    href: "/services#ai-business-systems",
+    icon: BrainCircuit,
   },
   {
-    title: "Internal Tools & Dashboards",
+    number: "03",
+    title: "Game Development Studio",
     description:
-      "Interfaces that turn scattered data and manual decisions into faster, clearer daily operations.",
-    icon: LayoutDashboard,
+      "Prototyping, gameplay systems, design implementation, testing, and optimization for interactive experiences.",
+    href: "/game-development",
+    icon: Gamepad2,
   },
   {
-    title: "AI Workflow Integration",
+    number: "04",
+    title: "Dedicated Teams & Collaboration",
     description:
-      "Practical AI-assisted flows connected to existing tools, policies, and measurable business tasks.",
+      "Scoped delivery, technical collaboration, integration support, and dedicated capacity shaped to the project.",
+    href: "/services#dedicated-teams",
+    icon: UsersRound,
+  },
+];
+
+export const serviceGroups = [
+  {
+    id: "software-development",
+    label: "Build",
+    title: "Software Development",
+    description:
+      "From focused first versions to operational platforms, we shape software around the people and processes that will use it.",
+    points: [
+      "Custom web platforms and portals",
+      "Mobile application development",
+      "SaaS MVPs and product foundations",
+      "Internal tools and dashboards",
+      "API integrations and connected workflows",
+      "Maintenance, scaling, and technical handover",
+    ],
+    icon: Code2,
+  },
+  {
+    id: "ai-business-systems",
+    label: "Improve",
+    title: "AI & Business Systems",
+    description:
+      "Practical intelligence for operations: clearer reporting, less repetitive work, and connected tools that support decisions.",
+    points: [
+      "AI-assisted business workflows",
+      "Business automation and approvals",
+      "Operational dashboards and analytics",
+      "CRM and ERP-style internal systems",
+      "Order, inventory, and reporting workflows",
+      "Project-fit data and AI integrations",
+    ],
     icon: Bot,
   },
   {
-    title: "Automation Systems",
+    id: "game-development",
+    label: "Create",
+    title: "Game Development Studio",
     description:
-      "Reliable automations for repetitive work, approvals, notifications, reporting, and handoffs.",
-    icon: Workflow,
+      "Focused support from early playable ideas through systems implementation, testing, and performance refinement.",
+    points: [
+      "Game design and rapid prototyping",
+      "Gameplay systems and mechanics",
+      "Level design implementation",
+      "Game UI and player controls",
+      "Testing and quality assurance",
+      "Performance optimization",
+    ],
+    href: "/game-development",
+    icon: Gamepad2,
   },
   {
-    title: "Maintenance & Scaling",
+    id: "dedicated-teams",
+    label: "Collaborate",
+    title: "Dedicated Teams & Technical Collaboration",
     description:
-      "Ongoing improvements that keep systems stable, observable, secure, and easier to extend.",
-    icon: ShieldCheck,
+      "Flexible engineering capacity for teams that need defined ownership, dependable communication, and clean integration with existing work.",
+    points: [
+      "Scoped development engagements",
+      "Dedicated technical capacity",
+      "Integration with existing product teams",
+      "Quality assurance and delivery support",
+      "Documentation and knowledge transfer",
+      "Ongoing technical maintenance",
+    ],
+    icon: UsersRound,
   },
 ];
 
-export const detailedServices = [
-  ...services,
+export const gameServices = [
   {
-    title: "Business Dashboards",
+    number: "01",
+    title: "Game Design & Prototyping",
     description:
-      "Decision-focused dashboards for leadership, operations, sales, finance, and project teams.",
-    icon: Gauge,
+      "Turn a concept into a focused playable prototype that can test the core loop before production expands.",
+    icon: Sparkles,
   },
   {
-    title: "API & Integration Work",
+    number: "02",
+    title: "Gameplay Systems & Mechanics",
     description:
-      "Connections between SaaS tools, payment services, CRMs, spreadsheets, databases, and internal systems.",
-    icon: Network,
+      "Implement responsive rules, progression, interactions, and reusable systems around the intended player experience.",
+    icon: Gamepad2,
+  },
+  {
+    number: "03",
+    title: "Level Design & Implementation",
+    description:
+      "Translate level intent into playable spaces, encounters, pacing, triggers, and production-ready implementation.",
+    icon: Layers3,
+  },
+  {
+    number: "04",
+    title: "Game UI & Player Controls",
+    description:
+      "Build clear interfaces, feedback states, input flows, and controls that support the game instead of interrupting it.",
+    icon: SlidersHorizontal,
+  },
+  {
+    number: "05",
+    title: "Testing & Quality Assurance",
+    description:
+      "Test core flows, edge cases, usability, and regression risk with actionable reporting throughout development.",
+    icon: TestTube2,
+  },
+  {
+    number: "06",
+    title: "Performance Optimization",
+    description:
+      "Profile bottlenecks, improve runtime behavior, and prioritize technical changes against the project's target experience.",
+    icon: Gauge,
   },
 ];
 
@@ -147,103 +243,34 @@ export const processSteps = [
   {
     title: "Understand",
     description:
-      "Map the business objective, users, constraints, risks, and the workflows the software must improve.",
+      "Map the objective, users, constraints, risks, and the experience or workflow the project needs to improve.",
   },
   {
     title: "Design",
     description:
-      "Turn the problem into a focused product shape with clear flows, technical choices, and scope boundaries.",
+      "Turn the brief into a focused product shape with clear flows, technical choices, and scope boundaries.",
   },
   {
     title: "Build",
     description:
-      "Develop the system in tight increments with maintainable code, visible progress, and practical tradeoffs.",
+      "Develop in visible increments with maintainable code, practical tradeoffs, and regular feedback.",
   },
   {
-    title: "Launch",
+    title: "Validate",
     description:
-      "Ship with testing, production-ready details, documentation, and a clean path for handover or continued work.",
+      "Test the important paths, resolve production risks, and confirm that the work answers the original need.",
   },
   {
-    title: "Improve",
+    title: "Launch & Improve",
     description:
-      "Use feedback, data, and operational reality to refine the system after it meets real users.",
-  },
-];
-
-export const capabilities = [
-  {
-    title: "Software Development",
-    points: [
-      "SaaS MVPs and first product versions",
-      "Custom web platforms and portals",
-      "Internal tools and dashboards",
-      "API integrations and workflow systems",
-      "Deployment, training, and ongoing support",
-    ],
-    icon: Code2,
-  },
-  {
-    title: "AI & Analytics",
-    points: [
-      "AI-assisted business workflows",
-      "Data dashboards and analytics",
-      "Predictive analytics and decision support",
-      "NLP and image-processing use cases",
-      "Reporting and business visibility",
-    ],
-    icon: BrainCircuit,
-  },
-  {
-    title: "Business Systems",
-    points: [
-      "CRM and ERP-style internal systems",
-      "POS and branch operation workflows",
-      "Inventory and reporting systems",
-      "Order management and operational dashboards",
-      "Connected systems instead of disconnected tools",
-    ],
-    icon: Store,
-  },
-  {
-    title: "Outsourcing & Dedicated Teams",
-    points: [
-      "Talent sourcing and vetting",
-      "Dedicated team setup",
-      "Remote workforce management",
-      "Process outsourcing and automation",
-      "Quality assurance and performance tracking",
-    ],
-    icon: UsersRound,
-  },
-  {
-    title: "Cloud, DevOps & Operations",
-    points: [
-      "Dockerized deployment workflows",
-      "Nginx-based production serving",
-      "CI/CD with GitHub Actions",
-      "Monitoring, errors, logs, and observability",
-      "Scalable cloud deployment planning",
-    ],
-    icon: CloudCog,
-  },
-  {
-    title: "Maintenance & Scaling",
-    points: [
-      "Post-launch support",
-      "Performance and stability improvements",
-      "Feature iteration after real users",
-      "Documentation and handover",
-      "Long-term maintainability",
-    ],
-    icon: Headphones,
+      "Support release, handover, and measured iteration once the product meets real users and operating conditions.",
   },
 ];
 
 export const technologyAreas = [
   {
-    title: "Frontend",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Angular", "React Native", "Flutter"],
+    title: "Web & Mobile",
+    items: ["Next.js", "React", "TypeScript", "Angular", "React Native", "Flutter"],
   },
   {
     title: "Backend",
@@ -251,19 +278,25 @@ export const technologyAreas = [
   },
   {
     title: "AI & Data",
-    items: ["NLP", "OpenCV", "PyTorch", "Scikit-learn", "Power BI", "Predictive Analytics"],
+    items: ["NLP", "OpenCV", "PyTorch", "Scikit-learn", "Power BI", "Predictive analytics"],
   },
   {
-    title: "Database",
-    items: ["PostgreSQL", "Redis", "SQL"],
+    title: "Databases & Storage",
+    items: ["PostgreSQL", "Redis", "SQL-based data modeling"],
   },
   {
-    title: "Cloud & DevOps",
-    items: ["AWS", "Azure", "GCP", "Docker", "GitHub Actions", "Nginx"],
+    title: "Cloud, DevOps & Monitoring",
+    items: ["AWS", "Azure", "GCP", "Docker", "GitHub Actions", "Nginx", "Sentry", "Grafana"],
   },
   {
-    title: "Monitoring & Observability",
-    items: ["Sentry", "Prometheus", "Grafana", "ELK", "OpenSearch"],
+    title: "Game Development",
+    items: [
+      "Project-fit engine selection",
+      "Gameplay systems",
+      "Performance profiling",
+      "Test planning",
+    ],
+    note: "Engines, languages, target platforms, and production tools are selected against each project's requirements rather than presented as a fixed stack.",
   },
 ];
 
@@ -271,32 +304,32 @@ export const detailedDeliverySteps = [
   {
     title: "Consultation & Requirement Analysis",
     description:
-      "We assess the business goal, users, workflows, constraints, and technical requirements before deciding what should be built.",
+      "We assess the goal, users, workflows, constraints, and technical requirements before deciding what should be built.",
   },
   {
     title: "Strategic Planning & Project Scoping",
     description:
-      "We define the scope, delivery path, priorities, timeline, and risks so the project starts with clear expectations.",
+      "We define scope, priorities, delivery path, dependencies, and risk so the work starts with shared expectations.",
   },
   {
     title: "Design & Prototyping",
     description:
-      "We turn requirements into user flows, interface direction, and practical product structure before heavy development begins.",
+      "We turn requirements into flows, interface direction, system behavior, and a practical product structure.",
   },
   {
     title: "Development & Integration",
     description:
-      "We build in focused increments, connect systems, integrate APIs, and keep the implementation maintainable.",
+      "We build in focused increments, connect systems, integrate approved services, and keep implementation maintainable.",
   },
   {
     title: "Testing & Quality Assurance",
     description:
-      "We test core flows, edge cases, performance, and production readiness before launch.",
+      "We test core flows, edge cases, accessibility, performance, and production readiness before release.",
   },
   {
-    title: "Deployment, Training & Ongoing Support",
+    title: "Deployment, Handover & Support",
     description:
-      "We support launch, documentation, handover, training, and post-launch improvements.",
+      "We support launch, documentation, knowledge transfer, and the next measured round of improvement.",
   },
 ];
 
@@ -314,36 +347,46 @@ export const productLab = [
       "Ideas shaped around reducing repetitive work without adding another heavy platform to manage.",
   },
   {
-    label: "Product Lab",
-    title: "Founder-grade MVP patterns",
+    label: "Product foundations",
+    title: "Reusable MVP patterns",
     description:
-      "Reusable product foundations that help new SaaS ideas reach real validation faster.",
+      "Reusable technical foundations intended to help new software ideas reach useful validation sooner.",
   },
 ];
 
 export const tash8eelAi = {
   label: "MVP stage / pilot-ready",
   name: "Tash8eel AI",
-  title: "Tash8eel AI - intelligent operations for stores and restaurants.",
+  title: "Intelligent operations for stores and restaurants.",
   description:
-    "Tash8eel AI is an AI-driven merchant operating system for restaurants, cafes, retail shops, and multi-branch businesses. It connects customer communication, orders, POS and cashier workflows, inventory visibility, finance, reports, calls, and automations into one platform.",
+    "Tash8eel AI is an AI-driven merchant operating system being developed for restaurants, cafes, retail shops, and multi-branch businesses.",
   detail:
-    "Tash8eel AI is being shaped as a connected operating platform for merchants who deal with scattered messages, manual orders, cashier workflows, stock updates, and reporting gaps. The goal is to bring daily operations into one practical system instead of disconnected tools.",
-  note: "Public launch details will be announced when the product is ready.",
-  appUrl: "https://app.gammapegassi.com",
+    "The MVP brings customer communication, order handling, cashier workflows, inventory visibility, reporting, and operational automation into one connected product direction.",
+  note: "Product access and pilot scope are confirmed directly with Gamma Pegassi. Public launch details will be announced when the product is ready.",
+  appUrl: process.env.NEXT_PUBLIC_TASH8EEL_APP_URL,
   operator: "Gamma Pegassi TB L.L.C-FZ",
   ownerLocation: "Dubai, United Arab Emirates",
-  capabilities: [
-    "WhatsApp, Messenger, and Instagram customer communication",
-    "AI replies and order capture",
-    "Customer conversations in Egyptian Arabic where relevant",
-    "POS / cashier workflows",
-    "Inventory visibility and low-stock alerts",
-    "Reports and analytics",
-    "AI call-handling concept",
-    "Follow-up automation for customers and operations",
-    "Order management from multiple channels",
-    "Business visibility across sales, inventory, and workflows",
+  statusGroups: [
+    {
+      label: "MVP focus",
+      items: [
+        "Customer communication and order capture",
+        "POS and cashier workflows",
+        "Inventory visibility and reporting",
+        "Operational dashboards and follow-up automation",
+      ],
+    },
+    {
+      label: "Integration direction",
+      items: [
+        "WhatsApp, Messenger, and Instagram workflows where approved and configured",
+        "Connected order management across supported channels",
+      ],
+    },
+    {
+      label: "Exploratory",
+      items: ["AI-assisted call-handling concept"],
+    },
   ],
 };
 
@@ -356,80 +399,83 @@ export const tash8eelPublicLinks = [
 
 export const tash8eelLandingSections = [
   {
-    title: "What Tash8eel AI does",
+    title: "Connected merchant workflows",
     description:
-      "Tash8eel AI connects customer communication, orders, POS and cashier workflows, inventory visibility, finance, reports, calls, and automations into one merchant operating layer.",
+      "The MVP direction connects customer communication, orders, cashier workflows, inventory visibility, reporting, and automation.",
   },
   {
-    title: "Channels and integrations",
+    title: "Configured integrations",
     description:
-      "The platform is designed to support merchant communication across WhatsApp, Messenger, Instagram, and related business integrations where approved and configured.",
+      "Channel and provider integrations are enabled only where they are approved, configured, and appropriate for the pilot scope.",
   },
   {
-    title: "AI operations layer",
+    title: "AI-assisted operations",
     description:
-      "AI-assisted workflows help capture orders, classify requests, support replies, summarize activity, and surface operational context for merchant teams.",
+      "AI-assisted flows are intended to support order capture, request classification, replies, summaries, and operational context.",
   },
   {
-    title: "Merchant control and human escalation",
+    title: "Human control",
     description:
-      "Merchants stay in control of customer communication, templates, business settings, staff workflows, and when conversations should move to a human operator.",
+      "Merchant teams remain responsible for business settings, staff workflows, customer communication, and human escalation.",
   },
   {
-    title: "Security and data handling",
+    title: "Practical data handling",
     description:
-      "Tash8eel AI is designed around practical access control, service-provider integrations, operational logs, and data handling practices suitable for merchant workflows.",
+      "The product is designed around access control, provider integrations, operational logs, and merchant workflow requirements.",
   },
   {
     title: "Public review links",
     description:
-      "Privacy Policy, Terms of Service, and Data Deletion Instructions are publicly available for platform review, merchants, users, and authorized requesters.",
+      "Privacy, terms, and data-deletion information remain publicly available for product review and authorized requests.",
   },
 ];
 
 export const principles = [
-  "Build useful software",
-  "Move fast without destroying quality",
+  "Start with the real problem",
+  "Make scope and tradeoffs visible",
+  "Design and engineering together",
   "Keep systems maintainable",
-  "Design and engineering belong together",
-  "Automate real work, not fake demos",
-  "Communicate honestly",
+  "Validate before expanding",
+  "Communicate in plain language",
 ];
 
 export const whyPoints = [
   {
-    title: "Realistic timelines",
+    title: "Scope with a reason",
     description:
-      "We avoid overpromising and define delivery expectations clearly before implementation.",
+      "Every feature and technical choice is tied back to a user, operating need, or measurable project goal.",
     icon: Activity,
   },
   {
-    title: "Long-term quality",
+    title: "Maintainable by design",
     description:
-      "Systems are built to stay understandable, maintainable, and extendable after launch.",
+      "We value understandable systems, documented decisions, and a clean path for future teams to extend the work.",
     icon: ShieldCheck,
   },
   {
-    title: "Budget visibility",
+    title: "Visible tradeoffs",
     description:
-      "We keep scope, tradeoffs, and priorities visible so decisions are made with context.",
+      "Priorities, constraints, risk, and budget implications stay visible so decisions can be made with context.",
     icon: LineChart,
   },
   {
-    title: "Proactive post-launch support",
+    title: "One collaborative process",
     description:
-      "The work does not stop at launch. We support stability, performance, and continuous improvement.",
-    icon: Headphones,
-  },
-  {
-    title: "Partner mindset",
-    description: "We work as a technical partner, not just a vendor delivering screens.",
+      "Creative, technical, and operational questions are handled together instead of being passed between silos.",
     icon: Workflow,
   },
-  {
-    title: "Clear communication",
-    description:
-      "Risks, decisions, and technical choices are explained in plain language.",
-    icon: Network,
-  },
 ];
+
+// Retained exports for existing page compatibility while public content stays centralized here.
+export const services = homeServices;
+export const detailedServices = homeServices;
+export const capabilities = serviceGroups;
+
+export const supportingServiceIcons = {
+  blocks: Blocks,
+  dashboard: LayoutDashboard,
+  network: Network,
+  cloud: CloudCog,
+  support: Headphones,
+  store: Store,
+};
