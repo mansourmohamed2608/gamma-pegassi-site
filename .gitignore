@@ -44,6 +44,8 @@ Thumbs.db
 reports/
 tmp/
 artifacts/qa/
+playwright-report/
+test-results/
 
 # local AI / prompt files
 AGENTS.md

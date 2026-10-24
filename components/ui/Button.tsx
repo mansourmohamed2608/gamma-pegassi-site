@@ -7,12 +7,14 @@ type ButtonProps = {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
-export function Button({ href, children, variant = "primary", className }: ButtonProps) {
+export function Button({ href, children, variant = "primary", className, onClick }: ButtonProps) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className={cn(
         "group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
         variant === "primary" &&

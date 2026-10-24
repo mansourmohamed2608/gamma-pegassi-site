@@ -3,7 +3,7 @@ import { ArrowDownRight, Check, Crosshair } from "lucide-react";
 import { BookingCTA } from "@/components/sections/BookingCTA";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { gameServices } from "@/lib/site";
+import { gameServices, gameTechnologyAreas } from "@/lib/site";
 import { pageMetadata, serviceJsonLd } from "@/lib/seo";
 
 const description =
@@ -125,6 +125,36 @@ export default function GameDevelopmentPage() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Reveal>
+            <SectionLabel>Technology approach</SectionLabel>
+            <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+              <h2 className="text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-6xl">
+                A production plan before a tool list.
+              </h2>
+              <p className="max-w-2xl text-base leading-8 text-white/65">
+                Named engines and languages are published only when team experience is approved
+                for public use. Until then, the technical plan stays specific to the brief.
+              </p>
+            </div>
+          </Reveal>
+          <div className="mt-14 grid border-l border-t border-white/15 md:grid-cols-2">
+            {gameTechnologyAreas.map((area, index) => (
+              <Reveal key={area.title} delay={index * 0.04}>
+                <article className="h-full border-b border-r border-white/15 p-7 sm:p-9">
+                  <p className="text-xs font-bold tracking-[0.22em] text-white/50">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-10 text-2xl font-bold text-white">{area.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-white/65">{area.description}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

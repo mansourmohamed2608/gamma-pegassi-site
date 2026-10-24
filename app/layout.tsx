@@ -20,12 +20,17 @@ export const metadata: Metadata = {
     template: `%s | ${site.companyName}`,
   },
   description: site.description,
+  manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
       { url: site.logo.mark, type: "image/png", sizes: "1024x1024" },
     ],
-    apple: [{ url: site.logo.mark, type: "image/png", sizes: "1024x1024" }],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
   },
   openGraph: {
     title: `${site.companyName} | Dubai Software, AI & Game Studio`,

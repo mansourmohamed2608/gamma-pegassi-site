@@ -45,17 +45,57 @@ export const site = {
   url: "https://gammapegassi.com",
   calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL,
   whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL,
+  contactFormEndpoint: process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT,
   heroVisualMode: "motion" as HeroVisualMode,
   logo: { mark: "/brand/pegassi-mark.png" },
   nav: [
     { label: "Services", href: "/services" },
     { label: "Game Studio", href: "/game-development" },
+    { label: "Our Work", href: "/our-work" },
     { label: "Products", href: "/products" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
-  socialLinks: [] as Array<{ label: string; href: string }>,
+  socialLinks: [
+    { label: "Gamma Pegassi on LinkedIn", href: "https://www.linkedin.com/company/gamma-pegassi/" },
+  ],
 };
+
+export const companyWork = [
+  {
+    label: "Company product / MVP stage",
+    title: "Tash8eel AI",
+    description:
+      "A Gamma Pegassi product being developed to connect merchant communication, orders, cashier workflows, inventory visibility, reporting, and operational automation.",
+    status: "MVP stage / pilot-ready",
+    href: "/tash8eel",
+    linkLabel: "Review product status",
+    areas: ["Merchant operations", "Workflow automation", "AI-assisted operations"],
+  },
+];
+
+export const gameTechnologyAreas = [
+  {
+    title: "Engine & platform fit",
+    description:
+      "Engine, language, target devices, and build constraints are confirmed during scoping instead of being presented as a fixed stack.",
+  },
+  {
+    title: "Gameplay implementation",
+    description:
+      "Core loops, player controls, progression, interactions, and reusable systems are defined around the intended experience.",
+  },
+  {
+    title: "Content pipeline",
+    description:
+      "Asset handoff, implementation boundaries, versioning, and performance budgets are agreed with the creative and technical teams.",
+  },
+  {
+    title: "Testing & profiling",
+    description:
+      "Test plans, target hardware, regression coverage, and runtime bottlenecks are reviewed against measurable project goals.",
+  },
+];
 
 export const positioningStrip = [
   "Dubai, UAE",
